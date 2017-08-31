@@ -1,0 +1,617 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  29 AUG 2017 10:39
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**SpatTempModBioNotes_2017.tex
+(./SpatTempModBioNotes_2017.tex
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 78 languages loaded.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/units/units.sty
+Package: units 1998/08/04 v0.9b Typesetting units
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/units/nicefrac.sty
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip43
+\L@UnitsRaiseTextstyle=\skip44
+\L@UnitsRaiseScriptstyle=\skip45
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen103
+\WF@size=\dimen104
+\c@WF@wrappedlines=\count88
+\WF@box=\box26
+\WF@everypar=\toks14
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen105
+\captionmargin@=\dimen106
+\captionwidth=\dimen107
+\caption@tempdima=\dimen108
+\caption@indent=\dimen109
+\caption@parindent=\dimen110
+\caption@hangindent=\dimen111
+)
+\c@ContinuedFloat=\count89
+Package caption Info: wrapfig package is loaded.
+)
+\c@KVtest=\count90
+\sf@farskip=\skip46
+\sf@captopadj=\dimen112
+\sf@capskip=\skip47
+\sf@nearskip=\skip48
+\c@subfigure=\count91
+\c@subfigure@save=\count92
+\c@lofdepth=\count93
+\c@subtable=\count94
+\c@subtable@save=\count95
+\c@lotdepth=\count96
+\sf@top=\skip49
+\sf@bottom=\skip50
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen113
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen114
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count97
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count98
+\leftroot@=\count99
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count100
+\DOTSCASE@=\count101
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen115
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count102
+\c@MaxMatrixCols=\count103
+\dotsspace@=\muskip10
+\c@parentequation=\count104
+\dspbrk@lvl=\count105
+\tag@help=\toks17
+\row@=\count106
+\column@=\count107
+\maxfields@=\count108
+\andhelp@=\toks18
+\eqnshift@=\dimen116
+\alignsep@=\dimen117
+\tagshift@=\dimen118
+\tagwidth@=\dimen119
+\totwidth@=\dimen120
+\lineht@=\dimen121
+\@envbody=\toks19
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip54
+\thm@postskip=\skip55
+\thm@headsep=\skip56
+\dth@everypar=\toks26
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen122
+\Gin@req@width=\dimen123
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks27
+)
+(./SpatTempModBioNotes_2017.aux)
+\openout1 = `SpatTempModBioNotes_2017.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 63.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count109
+\scratchdimen=\dimen124
+\scratchbox=\box29
+\nofMPsegments=\count110
+\nofMParguments=\count111
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count112
+\MPscratchDim=\dimen125
+\MPnumerator=\count113
+\makeMPintoPDFobject=\count114
+\everyMPtoPDFconversion=\toks29
+) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 66.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 66.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
+
+(./SpatTempModBioNotes_2017.toc)
+\tf@toc=\write3
+\openout3 = `SpatTempModBioNotes_2017.toc'.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
+
+Overfull \hbox (1.46686pt too wide) in paragraph at lines 100--103
+\OT1/ptm/m/n/10 Characteristics (how in-for-ma-tion pro-pogates) Trans-port equ
+a-tion, trav-el-ing waves. non-
+ []
+
+[2]
+
+LaTeX Warning: Reference `fig_step' on page 3 undefined on input line 127.
+
+<derive_diffusion_random_walk.png, id=16, 426.59375pt x 144.54pt>
+File: derive_diffusion_random_walk.png Graphic file (type png)
+
+<use derive_diffusion_random_walk.png>
+Package pdftex.def Info: derive_diffusion_random_walk.png used on input line 13
+1.
+(pdftex.def)             Requested size: 213.29634pt x 72.2698pt.
+ [3 <./derive_diffusion_random_walk.png>]
+
+LaTeX Warning: Reference `P1' on page 4 undefined on input line 168.
+
+[4] [5]
+
+LaTeX Warning: Reference `fundamental soln' on page 6 undefined on input line 3
+08.
+
+[6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 366--369
+
+ []
+
+[8] [9] <solution_of_Fisher_equation_c=1.png, id=44, 401.5pt x 401.5pt>
+File: solution_of_Fisher_equation_c=1.png Graphic file (type png)
+
+<use solution_of_Fisher_equation_c=1.png>
+Package pdftex.def Info: solution_of_Fisher_equation_c=1.png used on input line
+ 473.
+(pdftex.def)             Requested size: 153.6447pt x 153.64983pt.
+
+<solution_of_Fisher_equation_c=3.png, id=45, 401.5pt x 401.5pt>
+File: solution_of_Fisher_equation_c=3.png Graphic file (type png)
+
+<use solution_of_Fisher_equation_c=3.png>
+Package pdftex.def Info: solution_of_Fisher_equation_c=3.png used on input line
+ 476.
+(pdftex.def)             Requested size: 153.6447pt x 153.64983pt.
+ [10 <./solution_of_Fisher_equation_c=1.png (PNG copy)> <./solution_of_Fisher_e
+quation_c=3.png (PNG copy)>] [11]
+<bistable.pdf, id=53, 481.8pt x 642.4pt>
+File: bistable.pdf Graphic file (type pdf)
+ <use bistable.pdf>
+Package pdftex.def Info: bistable.pdf used on input line 597.
+(pdftex.def)             Requested size: 313.16628pt x 417.55505pt.
+ [12] [13 <./bistable.pdf>] [14]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 713.
+
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 713.
+
+[15] [16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 907--907
+[]\OT1/ptm/m/n/10 leak
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 907--907
+\OT1/ptm/m/n/10 from
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 907--907
+[]\OT1/ptm/m/n/10 uptake
+ []
+
+
+Overfull \hbox (3.7571pt too wide) in paragraph at lines 907--907
+[]\OT1/ptm/m/n/10 Induced
+ []
+
+
+Overfull \hbox (3.7467pt too wide) in paragraph at lines 907--907
+\OT1/ptm/m/n/10 realease 
+ []
+
+[18] [19]
+
+LaTeX Warning: Reference `nonlin' on page 20 undefined on input line 971.
+
+[20]
+
+LaTeX Warning: Reference `sys_1' on page 21 undefined on input line 1014.
+
+
+LaTeX Warning: Reference `sys_3' on page 21 undefined on input line 1014.
+
+
+LaTeX Warning: Reference `e_dx' on page 21 undefined on input line 1028.
+
+
+LaTeX Warning: Reference `d_dy1' on page 21 undefined on input line 1044.
+
+
+LaTeX Warning: Reference `d_dy1' on page 21 undefined on input line 1046.
+
+
+LaTeX Warning: Reference `1_dz1' on page 21 undefined on input line 1046.
+
+[21]
+
+LaTeX Warning: Reference `d_dy1' on page 22 undefined on input line 1049.
+
+
+LaTeX Warning: Reference `1_dz1' on page 22 undefined on input line 1049.
+
+<FKN_figure.jpg, id=96, 941.01563pt x 428.35031pt>
+File: FKN_figure.jpg Graphic file (type jpg)
+ <use FKN_figure.jpg>
+Package pdftex.def Info: FKN_figure.jpg used on input line 1055.
+(pdftex.def)             Requested size: 423.45313pt x 192.75584pt.
+
+Overfull \hbox (78.45313pt too wide) in paragraph at lines 1055--1057
+[][]
+ []
+
+
+LaTeX Warning: Reference `fig:fkn' on page 22 undefined on input line 1058.
+
+
+LaTeX Warning: Reference `d_dy1' on page 22 undefined on input line 1058.
+
+
+LaTeX Warning: Reference `1_dz1' on page 22 undefined on input line 1058.
+
+
+Overfull \hbox (24.24611pt too wide) in paragraph at lines 1058--1059
+[]\OT1/ptm/m/n/10 Figure [] is a plot from pplane show-ing the $\OML/cmm/m/it/1
+0 y$\OT1/ptm/m/n/10 -nullcline (pink) and the $\OML/cmm/m/it/10 z$\OT1/ptm/m/n/
+10 -nullcline(yellow)
+ []
+
+[22 <./FKN_figure.jpg>] [23]
+
+LaTeX Warning: Reference `fig:vdp' on page 24 undefined on input line 1076.
+
+
+LaTeX Warning: Reference `fig:oscper' on page 24 undefined on input line 1076.
+
+
+LaTeX Warning: Reference `fdpx' on page 24 undefined on input line 1078.
+
+
+LaTeX Warning: Reference `fdpy' on page 24 undefined on input line 1078.
+
+
+LaTeX Warning: Reference `fdpx1' on page 24 undefined on input line 1086.
+
+
+LaTeX Warning: Reference `fig:vdp' on page 24 undefined on input line 1094.
+
+
+LaTeX Warning: Reference `perT' on page 24 undefined on input line 1101.
+
+<van_der_Pol_oscillator.jpg, id=103, 1003.75pt x 1003.75pt>
+File: van_der_Pol_oscillator.jpg Graphic file (type jpg)
+
+<use van_der_Pol_oscillator.jpg>
+Package pdftex.def Info: van_der_Pol_oscillator.jpg used on input line 1108.
+(pdftex.def)             Requested size: 250.93689pt x 250.93689pt.
+
+<Oscillator_period.jpg, id=104, 803.0pt x 1003.75pt>
+File: Oscillator_period.jpg Graphic file (type jpg)
+
+<use Oscillator_period.jpg>
+Package pdftex.def Info: Oscillator_period.jpg used on input line 1116.
+(pdftex.def)             Requested size: 160.59715pt x 200.74644pt.
+ [24] [25 <./van_der_Pol_oscillator.jpg> <./Oscillator_period.jpg>] <bz_3.pdf, 
+id=112, 614.295pt x 794.97pt>
+File: bz_3.pdf Graphic file (type pdf)
+ <use bz_3.pdf>
+Package pdftex.def Info: bz_3.pdf used on input line 1137.
+(pdftex.def)             Requested size: 227.62204pt x 294.57098pt.
+
+[26 <./bz_3.pdf>]
+Overfull \hbox (6.88924pt too wide) in paragraph at lines 1146--1146
+[]\OT1/ptm/b/n/14.4 Examples of Re-lax-ation Os-cil-la-tors with Spa-tial Vari-
+
+ []
+
+
+LaTeX Warning: Reference `fig:bz2' on page 27 undefined on input line 1172.
+
+<BZ_model2.jpg, id=153, 1204.5pt x 786.94pt>
+File: BZ_model2.jpg Graphic file (type jpg)
+ <use BZ_model2.jpg>
+Package pdftex.def Info: BZ_model2.jpg used on input line 1176.
+(pdftex.def)             Requested size: 240.89574pt x 157.38521pt.
+ [27]
+
+LaTeX Warning: Reference `bz2u' on page 28 undefined on input line 1182.
+
+
+LaTeX Warning: Reference `bz2v' on page 28 undefined on input line 1182.
+
+[28 <./BZ_model2.jpg>]
+
+LaTeX Warning: Reference `fig:fn' on page 29 undefined on input line 1217.
+
+
+LaTeX Warning: Reference `fig:wp' on page 29 undefined on input line 1217.
+
+
+LaTeX Warning: Reference `fnu' on page 29 undefined on input line 1219.
+
+
+LaTeX Warning: Reference `fnv' on page 29 undefined on input line 1219.
+
+
+LaTeX Warning: Reference `fig:wp' on page 29 undefined on input line 1236.
+
+
+LaTeX Warning: Reference `tcf' on page 29 undefined on input line 1236.
+
+[29] <FN_figure.jpg, id=163, 1204.5pt x 1003.75pt>
+File: FN_figure.jpg Graphic file (type jpg)
+ <use FN_figure.jpg>
+Package pdftex.def Info: FN_figure.jpg used on input line 1269.
+(pdftex.def)             Requested size: 240.89574pt x 200.74644pt.
+
+<Wave_pulse.jpg, id=164, 1003.75pt x 1003.75pt>
+File: Wave_pulse.jpg Graphic file (type jpg)
+ <use Wave_pulse.jpg>
+Package pdftex.def Info: Wave_pulse.jpg used on input line 1277.
+(pdftex.def)             Requested size: 200.74644pt x 200.74644pt.
+ [30 <./FN_figure.jpg>] [31 <./Wave_pulse.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 1355--1357
+
+ []
+
+[32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46]
+[47] [48] [49] [50] [51]
+
+LaTeX Warning: Reference `momentum' on page 52 undefined on input line 2339.
+
+
+LaTeX Warning: Reference `pflow' on page 52 undefined on input line 2357.
+
+
+LaTeX Warning: Reference `pflow' on page 52 undefined on input line 2358.
+
+[52] [53]
+
+LaTeX Warning: Reference `c_cont' on page 54 undefined on input line 2472.
+
+
+LaTeX Warning: Reference `c_rho' on page 54 undefined on input line 2477.
+
+
+LaTeX Warning: Reference `c_u' on page 54 undefined on input line 2482.
+
+
+LaTeX Warning: Reference `c_v' on page 54 undefined on input line 2487.
+
+
+LaTeX Warning: Reference `c_w' on page 54 undefined on input line 2492.
+
+[54] [55] [56] [57] [58] [59] (./SpatTempModBioNotes_2017.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4009 strings out of 493117
+ 59249 string characters out of 6135433
+ 126481 words of memory out of 5000000
+ 7381 multiletter control sequences out of 15000+600000
+ 26523 words of font info for 62 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 44i,17n,42p,664b,342s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texli
+ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive
+/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2
+014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/201
+4/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2014/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2014/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2014/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2014/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2014/texmf-dist/fonts/
+type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
+times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr
+i8a.pfb>
+Output written on SpatTempModBioNotes_2017.pdf (59 pages, 1961382 bytes).
+PDF statistics:
+ 335 PDF objects out of 1000 (max. 8388607)
+ 225 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+
