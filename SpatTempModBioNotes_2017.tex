@@ -3,22 +3,18 @@
 %\usepackage[latin9]{inputenc}
 \usepackage{units}
 %\usepackage{bbding}
-%\usepackage{amsmath}
-%\usepackage{amssymb}
 %\usepackage{esint}
 %\usepackage{babel}
 \usepackage{graphics,wrapfig,times}
 %\usepackage[dvips]{epsfig,color}
 \usepackage{subfig}
-\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{mathtools, amsmath, amsthm, amssymb, amsfonts}
+	\numberwithin{equation}{section}		% number equations by section
 %\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
 \usepackage{graphicx}
 \setlength{\parindent}{0.25in}
 
-%\usepackage[dvips]{epsfig,color}
-%\usepackage{amsmath, amsthm, amssymb}
 \usepackage{enumerate}
-%\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
 
 \def\b#1{{\bf{#1}}}
 \def\pref#1{(\ref{#1})}
@@ -28,9 +24,16 @@
 \def\bea{\begin{eqnarray}}
 \def\ena{\end{eqnarray}}
 
+%%% User-defined commands
+% general derivatives
+\newcommand{\ordD}[2]{\frac{d #1}{d #2}}
+\newcommand{\ordDD}[2]{\frac{d^2 #1}{d #2 ^2}}
+\newcommand{\parD}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\parDD}[2]{\frac{\partial ^2 #1}{\partial #2 ^2}}
+
+% specific derivatives
 \def\parx#1{\frac{\partial #1}{\partial x}}
 \def\part#1{\frac{\partial #1}{\partial t}}
-
 \def\pary#1{\frac{\partial #1}{\partial y}{}}
 \def\parxi#1{\frac{\partial #1}{\partial x_i}}
 \def\parxj#1{\frac{\partial #1}{\partial x_j}}
@@ -38,8 +41,6 @@
 \def\parxxj#1{\frac{\partial^2 #1}{{\partial x_j}^2}}
 \def\pary#1{\frac{\partial #1}{\partial y}{}}
 \def\parz#1{\frac{\partial #1}{\partial z}{}}
-\def\Re{\textrm{Re}}
-
 \def\dt#1{\frac{d#1}{dt}{}}
 \def\Dt#1{\frac{D#1}{Dt}{}}
 
@@ -49,34 +50,45 @@
 \def\paryy#1{\frac{\partial^{2}#1}{\partial y^{2}}}
 \def\parzz#1{\frac{\partial^{2}#1}{\partial z^{2}}}
 
-\def\part#1{\frac{\partial #1}{\partial t}}
+% useful shorthands
+\def\Re{\textrm{Re}}
+\def\vx{\vec{x}}
+\def\vu{\vec{u}}
 \def\grad#1{\nabla #1}
 \def\b#1{{\bf{#1}}}
 \def\Oext{\Omega^{(1)}}
 \def\Oint{\Omega^{(2)}}
 \def\Uext{\b{U}^{(1)}}
 \def\Uint{\b{U}^{(2)}}
-
 \newcommand{\delx}{\triangle{}x}
 \newcommand{\delt}{\triangle{}t}
 
-\begin{document}
-\title{Spatial and Temporal Modelling in Biology-MAP5932}
-\author{N.G. Cogan}
-\maketitle
+% automatically number all equations in \[ \]
+\DeclarePairedDelimiter\set\{\}
+\let\[\equation
+\let\]\endequation
 
+%%% Begin Document
+\begin{document}
+\title{MAP5932 \\ Spatial and Temporal Modeling in Biology}
+\author{N.G. Cogan \thanks{Contributing Typists: Patrick S. Eastham, \dots}}
+\maketitle
 \newpage
+
 \tableofcontents
+\newpage
+
+%%% Section: Course Overview
 \section{Course Overview}
 \begin{enumerate}
 \item PDE background: Classification? Solution characterization? Solution methods?
-  \item Conservation Laws (Biochemical, population, macroscale behavior)
+\item Conservation Laws (Biochemical, population, macroscale behavior)
   \begin{enumerate}
     \item Diffusion Equations- derivations, traveling waves etc.
     \item Chemotoxis
     \item Turing pattern waves
   \end{enumerate}
-  \item Physical models (e.g. Tumors, fluid models, physics,chemistry)
+\item Mechanics \& Physical models (e.g. Tumors, fluid models, physics,chemistry)
   \begin{enumerate}
   \item Mechanical Models
   \item Fluid Dynamics
@@ -87,50 +99,56 @@
   \end{enumerate}
   \item Topics (e.g. Sensitivity/UQ, Spatial Fitzhugh-Nagumo, spatial Ca$^{2+}$...)
 \end{enumerate}
+
+%%% Section: PDE Background
 \section{PDE Background}
 \subsection{Classification}
 \begin{enumerate}
-\item Hyperbolic: \bea a\part{u}+b\parx{u} &=& 0 \ena
-\item Elliptic: \bea \nabla u = u_{xx}+u_{yy}+u_{zz} =0\ena
-\item Parabolic:  \bea u_t &=& \nabla u \nonumber\\
-				& &= u_{xx}+u_{yy}+u_{zz} \ena
+\item Hyperbolic: \bea \part{u}+a\parx{u} &=& f(\vec{x}) \ena
+\item Elliptic: \bea \Delta u = u_{xx}+u_{yy}+u_{zz} =f(\vec{x})\ena
+\item Parabolic:  
+	\begin{align}
+	u_t = & \,\Delta u + f(\vec{x})\\
+	= & \,u_{xx}+u_{yy}+u_{zz}
+	\end{align}
 \end{enumerate}
 \subsection{Characterization}
 \subsubsection{Hyperbolic}
-Characteristics (how information propogates)
-Transport equation, traveling waves.
-nonlinear on has shocks where characteristics meet
-\subsubsection{elliptic}
-Laplace equation, steady-state diffusion, smooth solutions, maximum principle. 
+Transport equation, Characteristics (how information propogates), traveling waves.
+Nonlinear has shocks where characteristics meet.
+\subsubsection{Elliptic}
+Laplace equation, steady-state of diffusion, smooth solutions, maximum principle. 
 \subsubsection{Parabolic}
-Heat/Diffusion equation, Smooth solutions, Gaussian, 'smoothing', Separation of variables
+Heat/Diffusion equation, smooth solutions, Gaussian, 'smoothing', Separation of variables
 
-Nonlinear can have traveling waves
+\subsubsection{Real-World PDEs usually defy classification}
+Systems: 
+\begin{itemize}
+\item Navier-Stokes?
+\item Stokes?
+\item FHN with space?
+\item Cable equation?
+\end{itemize}
 
-Systems: Navier-Stokes?
-Stokes?
-FHN with space?
-Cable equation?
-
+%%% Section: Diffusion Equations
 \section{Diffusion Equations}
-We start with the most classic PDE model - the heat equation. This is usually referred to as the diffusion equation in most bio applications, since it is a model of random motion of particles/critters. There are several ways to derive the diffusion equation - each has a different flavor and provides different insight into the model (i.e. what behavior is admissible). 
-\subsection{Derivation from Random Walks}
+We start with a classic PDE model - the heat equation. This is usually referred to as the diffusion equation in most biological applications, since it is a model of random motion of particles/critters. There are several ways to derive the diffusion equation - each has a different flavor and provides different insight into the model (i.e. what behavior is admissible). It should be emphasized that the same PDE can model different phenomena, and therefore have different derivations through physical/biological arguments. This is an advantage of mathematical modeling.
 
-\indent Consider a simple unbiased random walk on a 1D lattice. A particle
+\subsection{Derivation from Random Walks}
+Consider a simple unbiased random walk on a 1D discrete lattice. A particle
 starting at position $x_0=0$ must move one step of size $\delx$ to the
 left or right at each time step $\delt$. We are interested in the probability of
 finding the particle at each position on the lattice.
 
-\ \\
-\indent After N steps, the particle will have traveled at most $N\delx$ to
-the left or right, so is found in the interval [-$N\delx$,$N\delx$].
-(See Figure \ref{fig_step})
+After N steps, the particle will have traveled at most $N\delx$ to
+the left or right, so is found in the interval [-$N\delx$,$N\delx$]
+(see Fig. \ref{fig_step}).
 
 \begin{figure}[b]
 \begin{center}
-\includegraphics[scale=0.5]{derive_diffusion_random_walk.png}
+\includegraphics[scale=0.5]{figures/derive_diffusion_random_walk.png}
 \end{center}
-\caption{Deriving Diffusion Equation from Random walk \label{derive diffusion}}
+\caption{Deriving solution from Random-Walks \label{derive diffusion}}
 \label{fig_step}
 \end{figure}
 
@@ -189,14 +207,14 @@ P\left(\frac{x}{\triangle x},\frac{t}{\triangle t}\right) & \sim\left(\frac{2}{\
 \end{equation}
 
 \noindent Letting $\delx, \delt \rightarrow 0$ such that
-$\frac{\delx^2}{2\delt}\rightarrow D$, a finite, nonzero,  number, yields
+$\frac{\delx^2}{2\delt}\rightarrow D$, a finite, nonzero number, yields
 \begin{equation}\label{fundamental soln}
     P(x,t)= \left(\frac{1}{4\pi{}Dt}\right)^{\frac{1}{2}}\exp\left[\frac{-x^2}{4Dt}\right].
 \end{equation}
 
 \noindent
 It turns out that this is the fundamental solution to the 1-D diffusion
-equation with Dirac Delta function as an initial condition:
+equation, meaning it solves the diffusion equation with Dirac Delta ``function" as an initial condition:
 \begin{equation}
     \frac{\partial{}C}{\partial{}t}=DC_{xx}, \quad C(x,0)=\delta(x).
 \end{equation}
@@ -208,7 +226,7 @@ different solutions will be obtained. This approach has been used in
 attempts to derive models for chemotaxis, where other derivation
 approaches become counterintuitive.
 
-\subsection{Another Derivation from Random Walks}
+\subsection{Deriving PDE from Random Walks}
 \indent
 Consider a particle moving on a lattice that moves to the right with
 probability $\alpha$ and to the left with probability $\beta$. The
@@ -245,29 +263,25 @@ D$, a finite number. This yields the diffusion equation,
 \end{equation}
 
 Again, if we modify the assumptions about $\alpha$ and $\beta$, we
-can obtain different models.
+can obtain different models, for example including advection effects.
 
-\subsection{Derivation by Conservation Law}
-\begin{flushleft}
- Our assumptions are: motion takes place in a single space dimension and cross-sectional area is constant along its length.
-\end{flushleft}
+\subsection{Derivation of general PDE by Conservation Law}
+Our assumptions are that motion occurs in a homogeneous tube which we treat as a single space dimension and cross-sectional area is constant along its length.
 
-\indent Let $x$ be the distance along the tube from some arbitrary location. If we define $c$ to be the concentration/desnity of some particles, then we can ask what changes the density in some local neighborhood? Say, $(x, x+\Delta x)$ 
-Conservation implies that the only way to change the number (density) of particles is if a). particles move into or out of the region or b.) particles are created or destroyed (born or die).
+Let $x$ be the distance along the tube from some arbitrary location. If we define $c$ to be the concentration/density of some particles, then we can ask what changes the density in some local neighborhoods $(x, x+\Delta x)$? Conservation implies that the only way to change the number (density) of particles is if a) particles move into or out of the region or b) particles are created or destroyed (born or die).
 
-
-\indent Let $c(x,t)$ be the concentration of particles(number of particles/volume). Let $J(x,t)$  be the flux of particles at location $x$ (number of particles crossing location $x$ at time $t$ (measure from left to right)). Let $\sigma(x,t)$ be the number of particles created or destroyed. Conservation implies
+Let $c(x,t)$ be the concentration of particles(number of particles/volume). Let $J(x,t)$  be the flux of particles at location $x$ (number of particles crossing location $x$ at time $t$ (measure from left to right)). Let $\sigma(x,t)$ be the number of particles created or destroyed. Conservation implies
 
 \begin{equation}
 	\textrm{$\Delta$ concentration per time}=\text{rate of entry - rate of exit $\pm$ product/destruction}
 \end{equation}
 
-\noindent Let A be the cross-sectional area of tube and $\Delta V= A \Delta x$ . Then,
+Let A be the cross-sectional area of tube and $\Delta V= A \Delta x$ . Then,
 \begin{equation}
 \frac{\partial}{\partial t} (c A \Delta x) = J(x,t)A-J(x+\Delta x ,t) A \pm \sigma(x,t)A \Delta x .
 \end{equation}
 
-\noindent A flux in the positive $x$ direction contribute to the net population positively at $x$, but negatively at $x+\Delta x$. Dividing by $A \Delta x$ is constant by assumption, we have
+A flux in the positive $x$ direction contribute to the net population positively at $x$, but negatively at $x+\Delta x$. Dividing by $A \Delta x$ is constant by assumption, we have
 
 \begin{equation}
 \frac{\partial c(x,t)}{\partial t}= \frac{J(x,t)-J(x+\Delta x,t)}{\Delta x} \pm \sigma(x,t).
@@ -281,7 +295,7 @@ Conservation implies that the only way to change the number (density) of particl
 \noindent This is the general statement that can be applicable to several situations. Flux term J and $\sigma$ can be chosen differently.
 
   \begin{enumerate}
-  \item Advection/Convection Equation: If particles are moving with a velocity $\vec{V}$, then $J= k c V$ substituting for a flux term gives $\frac{\partial c}{\partial t} = -\nabla (c k V)$ which is a closed dynamical system for c . When V is constant, it turns out 1D transport equation which is called advection/convection equation.
+  \item Advection/Convection Equation: If particles are moving with a velocity $V$, then $J= k c V$ and substituting for a flux term gives $\frac{\partial c}{\partial t} = -\nabla (c k V)$ which is a closed dynamical system for c . When V is constant, it turns out 1D transport equation which is called advection/convection equation.
 
 Net flux is  $J=c \alpha \nabla \psi $ where $\psi$ is given as some source of attraction of particles like nutrient signal or quorum sensing signal. If particles are charged, it can be electric potential also.
 
@@ -305,16 +319,16 @@ To make the problem well-posed, restrictions such as boundary conditions or init
 
 \begin{enumerate}
 \item{Infinite space domain with Dirac-Delta function} \\
-The solution turns out to be the fundamental solution in the equation (\ref{fundamental soln}).
+The solution turns out to be the fundamental solution in \eqref{fundamental soln}.
 
 \item{Finite space domain } \\
 Let $\Gamma$ be the boundary. There are three types of boundary conditions:
 	\begin{enumerate}
-		\item{Dirichlet:} $c|_{\Gamma}=\text{given}$
-		\item{Neumann:} $\frac{\partial c}{\partial t}|_{\Gamma}=0$
-		\item{Robin:} $\alpha c|_{\Gamma}+\beta\frac{\partial c}{\partial t}|_{\Gamma}=\text{given}$
+		\item{Dirichlet:} $c|_{\Gamma}=g$
+		\item{Neumann:} $\frac{\partial c}{\partial t}|_{\Gamma}=g,\qquad \text{usually }g=0$
+		\item{Robin:} $\alpha c|_{\Gamma}+\beta\frac{\partial c}{\partial t}|_{\Gamma}=g$
 	\end{enumerate}
-	Note that the Dirichlet boundary condition can always simply to $c|_{\Gamma}=0$. Why? Suppose $c|_{\Gamma}=a$, then a rescaling $\tilde c=c-a$ satisfied the original diffusion equation and the boundary condition $\tilde c|_{\Gamma}=0$
+	Note that the Dirichlet boundary condition can always simplify to $c|_{\Gamma}=0$. Why? Suppose $c|_{\Gamma}=a$, then a rescaling $\tilde c=c-a$ satisfied the original diffusion equation and the boundary condition $\tilde c|_{\Gamma}=0$
 	
 \item{Time independent:}
 \beq
@@ -469,10 +483,10 @@ $c=2$ is the most stable wave speed.
 \begin{figure}[tbh]
 \begin{centering}
 \subfloat{\begin{centering}
-\includegraphics[width=5.4cm]{solution_of_Fisher_equation_c=1}
+\includegraphics[width=5.4cm]{figures/solution_of_Fisher_equation_c=1}
 \par\end{centering} }
 \subfloat{\begin{centering}
-\includegraphics[width=5.4cm]{solution_of_Fisher_equation_c=3}
+\includegraphics[width=5.4cm]{figures/solution_of_Fisher_equation_c=3.png}
 \par\end{centering} }
 \par\end{centering}
 \caption{\label{figure:PF}Phase plane of solutions of Fisher's equation with different values of c}
@@ -594,7 +608,7 @@ Look for $c\approx0$ is the trajectory goes from $(0,0)$ to $(1,0)$.
 \end{equation}
 \begin{figure}
 \caption{Notes for bistable}
-\includegraphics[scale=.65]{bistable.pdf}
+\includegraphics[scale=.65]{figures/bistable.pdf}
 \label{fig_bist}
 \end{figure}
 
@@ -1052,7 +1066,7 @@ and solve for $y$. Finally, we need to find values for or $q$ and $f$ that make 
 
 \begin{figure}
 \caption{Trajectories in the phase plane for the reduced FKN model}
-\includegraphics[scale=.45]{FKN_figure.jpg}
+\includegraphics[scale=.45]{figures/FKN_figure.jpg}
 \label{fig:fkn}
 \end{figure}
 Figure~\ref{fig:fkn} is a plot from pplane showing the $y$-nullcline (pink) and the $z$-nullcline(yellow) together with the course of some trajectories (blue), and we see that a limit cycle is starting to form. The final question to ask is: How can we interpret the solution to the system in (\ref{d_dy1})-(\ref{1_dz1}) in the context of the BZ reaction?
@@ -1105,7 +1119,7 @@ It is not as simple to apply the method described above in the context of the FK
 \begin{figure}
 \caption{Phase plane for the van der Pol oscillator}
 \begin{center}
-\includegraphics[scale=.25]{van_der_Pol_oscillator.jpg}
+\includegraphics[scale=.25]{figures/van_der_Pol_oscillator.jpg}
 \end{center}
 \label{fig:vdp}
 \end{figure}
@@ -1113,7 +1127,7 @@ It is not as simple to apply the method described above in the context of the FK
 \begin{figure}
 \caption{Oscillations of $x$ in time}
 \begin{center}
-\includegraphics[scale=.20]{Oscillator_period.jpg}
+\includegraphics[scale=.20]{figures/Oscillator_period.jpg}
 \end{center}
 \label{fig:oscper}
 \end{figure}
@@ -1134,7 +1148,7 @@ the $z$- nullcline is $ z=x(y) \approx 1-y$ if $q<<10y\leq 1$ and something else
 \begin{figure}[b!]
 \caption{Null-clines}
 \begin{center}
-\includegraphics[width=8cm]{bz_3.pdf}
+\includegraphics[width=8cm]{figures/bz_3.pdf}
 \end{center}
 \label{fig:oscper}
 \end{figure}
@@ -1173,7 +1187,7 @@ $$v(-\infty,t)=1\hspace{0.5in}v(\infty,t)=0$$ Figure~\ref{fig:bz2} shows a plot 
 \begin{figure}
 \caption{$u$ and $v$ satisfying the specified boundary conditions}
 \begin{center}
-\includegraphics[scale=.20]{BZ_model2.jpg}
+\includegraphics[scale=.20]{figures/BZ_model2.jpg}
 \end{center}
 \label{fig:bz2}
 \end{figure}
@@ -1266,7 +1280,7 @@ c = \left(\cfrac{D}{2} \right)^{1/2}(u_c - 2u_p + u_D)
 \begin{figure}
 \caption{Phase plane for the spatially homogeneous Fitzhugh-Nagumo model}
 \begin{center}
-\includegraphics[scale=.20]{FN_figure.jpg}
+\includegraphics[scale=.20]{figures/FN_figure.jpg}
 \end{center}
 \label{fig:fn}
 \end{figure}
@@ -1274,7 +1288,7 @@ c = \left(\cfrac{D}{2} \right)^{1/2}(u_c - 2u_p + u_D)
 \begin{figure}
 \caption{Wave pulse in $z$ space}
 \begin{center}
-\includegraphics[scale=.20]{Wave_pulse.jpg}
+\includegraphics[scale=.20]{figures/Wave_pulse.jpg}
 \end{center}
 \label{fig:wp}
 \end{figure}
