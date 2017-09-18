@@ -310,156 +310,92 @@ Net flux is  $J=c \alpha \nabla \psi $ where $\psi$ is given as some source of a
 \end{equation}
 \end{enumerate}
 
-\subsection{Special Solution}
+\subsection{Special Solutions}
 Consider the diffusion equation
-\bea
-   \frac{\partial c}{\partial t} = D \Delta c.
-\ena
-To make the problem well-posed, restrictions such as boundary conditions or initial conditions should be imposed.
+\begin{equation}
+\frac{\partial u}{\partial t} - D \Delta u=f.
+\end{equation}
+
+In search for solutions to this equation, we consider several special solutions with certain properties (homogeneity, steady-state, etc.) to explore characteristics of the equation and its solutions. Most of the time, these special solutions allow us to reduce the complexity of a complicated PDE system to a system which we could potentially solve analytically. Special solutions we look for may take the following forms:
 
 \begin{enumerate}
-\item{Infinite space domain with Dirac-Delta function} \\
-The solution turns out to be the fundamental solution in \eqref{fundamental soln}.
-
-\item{Finite space domain } \\
-Let $\Gamma$ be the boundary. There are three types of boundary conditions:
-	\begin{enumerate}
-		\item{Dirichlet:} $c|_{\Gamma}=g$
-		\item{Neumann:} $\frac{\partial c}{\partial t}|_{\Gamma}=g,\qquad \text{usually }g=0$
-		\item{Robin:} $\alpha c|_{\Gamma}+\beta\frac{\partial c}{\partial t}|_{\Gamma}=g$
-	\end{enumerate}
-	Note that the Dirichlet boundary condition can always simplify to $c|_{\Gamma}=0$. Why? Suppose $c|_{\Gamma}=a$, then a rescaling $\tilde c=c-a$ satisfied the original diffusion equation and the boundary condition $\tilde c|_{\Gamma}=0$
-	
-\item{Time independent:}
-\beq
-	\frac{\partial c}{\partial t}=0\Rightarrow D\triangle c=0.
-\eeq
-The $c$ is the solution of the Laplace equation $D\triangle c=0$ and we call the solution $c$ is a steady-state solution.
-\item{Spatially independent:} Solving
-\beq
-	\frac{\partial c}{\partial t}=0.
-\eeq
-
-\item{Traveling wave:} Discuss later.
+\item Spatially homogeneous:
+\begin{equation*}
+u_t = f \rightarrow u = u(t).
+\end{equation*}
+\item Steady-state: 
+\begin{equation*}
+\Delta u = -\frac{f}{D} \rightarrow u = u(\vec{x}). 
+\end{equation*}These are usually used when searching for `long-time behavior' of the system.
+\item Asymptotic simplifications:
+\begin{equation*}
+\frac{\partial u}{\partial t} - D \Delta u + \epsilon f(u,u_x)=g,
+\end{equation*} with $\epsilon$ as a small variable. This is usually used when searching for a `quasi-steady state' solution, or with slow/fast dynamics of systems. 
+\item Separation of variables,
+\item Traveling wave solutions,
+\item Symmetry solutions. 
 \end{enumerate}
 
-After making the PDE well-posed, a common trick to solve it is "Separation of variables". In our case, assume
-\beq
-	c(x,t)=X(x)T(t)
-\eeq
-where the form of $X$ and $T$ are determined by the boundary conditions. To find the solution of the diffusion equation, substitute $c(x,t)=X(x)T(t)$ into the diffusion equation and exploit the boundary/initial condition to find the answer of $c$.
+The last three (separation of variables, traveling wave solutions, symmetry solutions) usually involve tricky changes of variables where we assume the solution takes a particular form. These require some fiddling and are usually used in conjunction with other observations. 
 
-When does separation of variables work? We use this ALL the time!
+
 \subsection{Dimensional Analysis}
-Consider the diffusion equation
+Consider the homogeneous diffusion equation
 \begin{equation}
-  \frac{\partial c}{\partial t}= D \Delta c.
+  \parD{c}{t} = D \Delta c,
 \end{equation}
-A quick calculation using dimensional analysis can give us a crude estimate of diffusion coefficient $D$. Let fundamental parameters be length $L$, time $T$, and mass $M$. Then express every physical quantities into $L,t,M$. Denote the square bracket [ ] be the dimension of the physical quantity. So we have
-
-\beq
-	[c]=\frac{M}{L^{3}},\,[t]=T,\,[x]=L.
-\eeq
-Then
-
-\begin{align}
-\frac{\partial c}{\partial t}=D\frac{\partial^{2}c}{\partial x^{2}} & \Rightarrow\left[\frac{\partial c}{\partial t}\right]=\left[D\frac{\partial^{2}c}{\partial x^{2}}\right]\\
- & \Rightarrow\frac{M/L^{3}}{T}=[D]\frac{M/L^{3}}{L^{2}}\\
- & \Rightarrow[D]=\frac{L^{2}}{T}
-\end{align}
-The dimension to the diffusion coefficient $D$ is length square over time. By repeating experiment of
-\[
-\begin{cases}
-\frac{\partial c}{\partial t}=DC_{xx}\\
-c(0)=c_{0}\\
-c(L)=0
-\end{cases}
-\]
-and measuring how long does a particle (concentration) from $x=0$ to $x=L$. Since we have data for length and time, so the diffusion coefficient $[D]=L^{2}/T$ is obtained.
-
-\noindent \textbf{Example}: Diffusion coefficient for 
-$Oxygen (in air) \approx 10^{-1}$ $cm^2/s$. Estimate the time it takes for oxygen to equilibrate across a cell by diffusion? What about across a room?
-(2) Smoke= $1.6 \times 10^{-2}$ $cm^2/s$ - it should be quite a bit smaller than oxygen since it is bigger\\
-
-\noindent \textbf{Example}: In a 3m by 3m room diffusion of smoke from one corner to another corner, the time elapsed is
+where $c(\vec{x},t)$ is a concentration. A quick calculation using dimensional analysis can give us a crude estimate of diffusion coefficient, $D$. With the  fundamental parameters for length as $L$, $T$ for time, and $M$ for mass, we express each term of the equation in terms of $L,t,M$.  We use the square bracket [ ] to denote the dimension, which yields
 \begin{align*}
-t & =\frac{L^{2}}{D}=\frac{(3\sqrt{2}*100)^{2}}{1.78*10^{-1}}\\
- & =1011235\,(s)\\
- & =280.89\,(hour)
-\end{align*}
+\left[c_t \right] &= \left[ D\right] \left[\Delta c\right], \\
+\frac{M}{L^3}&=\left[D \right] \frac{M}{L^3}\frac{1}{L^2},\\
+\Rightarrow \left[ D\right]&= \frac{L^2}{T}.
+\end{align*} This gives us an idea about what to do to determine $D$ experimentally if needed. Fick used this experimentally to determine a relationship between $D$ and the gradient in $c$. We can also use this to determine transit time scale; i.e., $T \sim  L^2/D$. This can help us decide if our model is appropriate or not. For example, by using a diffusion model to model the motion of macrophages, we see the time scale determined with $T=L^2/D$ is drastically different that what is found experimentally.
 
-The elapsed time is far too long! Diffusion alone doesn't work. 
-There are examples about bacterial sensing using diffusion.
 
-%So it is not realistic and depends on the other conditions. Another possibility is a traveling wave solution to a reaction diffusion system.
+\noindent \textbf{Example}: In a $3m \times 3m$ room, the diffusion of smoke from one corner of the room to another should take 
+\begin{align*}
+T & =\frac{L^{2}}{D}=\frac{(3\sqrt{2}*100)^{2}}{1.78*10^{-1}}\\
+ & =1011235\textrm{ s}\\
+ & =280.89\textrm{ hr}.
+\end{align*}(This diffusion coefficient was provided from an earlier writer- I have no idea if it's correct.) The time determined isn't anywhere near the scale of what it should be. So, we don't expect this model to be a good indicator of what is occurring physically. 
+
+\noindent \textbf{Example}: We can use a similar argument to show that macrophages don't move randomly.
+
 
 \section{Traveling Wave Solutions}
+With the same equation $u_t = Du_{xx},$ we look for a traveling wave solution. We define $\xi = x-ct$ where $c$ is the wave speed, and $\xi$ is the wave coordinate. This is changing the PDE to an ODE system in a specific way. With this transformation, the derivative terms in $x$ and $t$ become
+\begin{equation*}
+\parD{u}{t} = \frac{d\,u}{d\,\xi}\cdot\parD{\xi}{t} = -c\parD{\xi}{t} , \hspace{.15in} \parD{u}{x} = \frac{d\,u}{d\,\xi} \cdot\parD{\xi}{x} = \parD{\xi}{x},
+\end{equation*} and the equation is then
+\begin{equation*}
+-c u_\xi = Du_{\xi \xi}.
+\end{equation*} The solution for this ODE is \begin{equation*}
+u = A + Be^{-(c/D)\xi}.
+\end{equation*} For boundary conditions, we want $u$ to be bounded at $\pm \infty$ in $x$. As $x\rightarrow \pm\infty, \xi\rightarrow \pm \infty.$ For the solution to stay bounded, the coefficient $B$ must be $0$, leaving the solution $u=A.$ This is not an interesting solution to mathematicians or biologists. While this example resulted in a constant solution, we can see traveling waves in diffusion models. 
 
-\indent Reaction diffusion equation $u_t=Du_{xx}$ plus boundary conditions can be solvable with computers or analytically. We can talk about the perturbation/asymptotic solutions that we are interested.
-
-Traveling wave is a  wave which travels without change of shape. If $u(x,t)$ is a travelling wave solution, the shape of the solution will be the same all time and the speed of propagation c will be a constant. Mathematically, we define as
-
-\beq
-	u(x,t)= u(x-ct)=u(z), \ z=x-ct.
-\eeq
-\noindent Then $u(x,t)$ is a travelling wave and it moves at constant speed c in the positive x direction. When we look for traveling wave solutions, we have
-
-\begin{equation}
-\frac{\partial u}{\partial t} = \frac{\partial u}{\partial z} \frac{\partial z}{\partial t}= -c \frac{du}{dz} \nonumber
-\end{equation}
-\begin{equation}
-\frac{\partial u}{\partial x} = \frac{\partial u}{\partial z} \frac{\partial z}{\partial x}= \frac{du}{dz} \nonumber
-\end{equation}
-\begin{equation}
-\frac{\partial^2 u}{\partial x^2} = \frac{d^2}{d z^2}.  \nonumber
-\end{equation}
-
-\noindent So, we have an ODE in traveling wave coordinates:
-\begin{equation}
-    Du''+cu'=0
-\end{equation}
-This is an eigenvalue problem for the wave speed $c$ and the wave
-front profile function $u$. The solution is
-\begin{equation}
-    u=A+Be^{\frac{-cz}{D}}.
-\end{equation}
-
-On the infinite domain, since the exponential becomes unbounded as
-$z \rightarrow-\infty$, so $B$ must be zero. Thus, $u=A$ and the
-solution is a constant function and to be considered as a traveling wave.
-
-\section{Fisher Equation}
+\section{Fisher's Equation}
 The simplest case of a nonlinear reaction diffusion equation is
 \begin{equation}
-	u_t=u_{xx}+u(1-u)
-\end{equation}
+	u_t=u_{xx}+u(1-u),
+\end{equation} where $u$ is the concentration of alleles. This equation results in an infinite number of traveling waves.
 
-It was suggested by Fisher (1937) as a deterministic version of a stochastic model for the spatial spread of a favoured gene in a population. It is also the natural extension of the logistic growth population model.
+This equation was suggested by Fisher (1937) as a deterministic version of a stochastic model for the spatial spread of alleles in a gene pool. It is also the natural extension of the logistic growth population model. We consider special solutions to see what's going on with Fisher's equation. 
 
-In the spatially homogeneous situation the steady states are $u = 0$ and $u = 1$, which
-are respectively unstable and stable. This suggests that we should look for travelling
-wave solutions for which $ 0\leq u \leq 1$; negative $u$ has no physical meaning for such models.
+\begin{enumerate}
+\item In the spatially homogeneous situation, we have \begin{equation*}
+u_t = u(1-u),
+\end{equation*} which can be solved analytically with partial fraction decomposition since it is a separable equation. However, we choose to look at the steady-states, which are $u = 0$ and $u = 1$ (unstable and stable, respectively). 
 
-Next, we look for traveling wave solutions. When we change to the traveling wave coordinate, we end up with the ODE:
-
-\begin{equation}
-    u''+cu'+u(1-u)=0
-\end{equation}
-
-Again, we'll require that the solution to this ODE is bounded.
-Phase plane analysis will allow us to find the solutions we seek. In
-the phase plane, trajectories that are bounded represent the profile
-of a wave front. Steady states in the phase plane will be constant
-solutions, and so are not interesting. We'll look for trajectories
-such as heteroclinic and homoclinic orbits, and limit cycles.
-
-We write our second order ODE as a system of first order ODEs:
+\item Next, we look for traveling wave solutions for which $ 0\leq u \leq 1$- negative $u$ has no physical meaning for this model since negative concentration for a gene is not realistic. After transforming to the wave coordinate system, the resulting ODE is 
+\begin{equation*}
+u''+cu'+u(1-u)=0.
+\end{equation*} This is still difficult to solve though. We'll require that the solution to this ODE is bounded. Phase plane analysis will allow us to find the solutions we seek. In the phase plane, trajectories that are bounded represent the profile of a wave front. Steady states in the phase plane will be constant solutions, and so are not interesting. We'll look for trajectories such as heteroclinic and homoclinic orbits, and limit cycles. We write our second order ODE as a system of first order ODEs:
 \begin{align}
     u'&=w\\
     w'&=-cw-u(1-u)
 \end{align}
-This system has steady states at (0,0) and (1,0), and it's Jacobian
-matrix is:
+This system has steady states at $(0,0)$ and $(1,0)$ and the Jacobian
+matrix:
 \begin{equation*}
 \begin{pmatrix}
   0 & 1 \\
@@ -467,184 +403,108 @@ matrix is:
 \end{pmatrix}
 \end{equation*}
 
-At (1,0), we have a saddle for all values of c. The eigenvalues are
+At $(1,0)$, we have a saddle for all values of c. The eigenvalues are
 
-\begin{center} $\lambda_{\pm}=-c/2\pm{}\sqrt{c^2+4}/2$. \\\end{center}
+\begin{equation*}
+\lambda_{\pm}=\frac{-c\pm \sqrt{c^2+4}}{2}, \end{equation*} where we note the dependence on $c$.
 
-At (0,0), we have a stable node if $c^2 >4$ and stable spiral if $c^2 < 4$ with eigenvalues
+At $(0,0)$, we have a stable node if $c^2 >4$ and stable spiral if $c^2 < 4$ with eigenvalues
 
-\begin{center} $\lambda_{\pm}=-c/2\pm{}\sqrt{c^2-4}/2$.\\\end{center}
+\begin{equation*}
+\lambda_{\pm}=\frac{-c\pm \sqrt{c^2-4}}{2}, \end{equation*}
 
-If $c<2$ there is a traveling wave solution but without biological meaning since $u<0$.
-If $c>2$ there are traveling wave solutions.
-
-$c=2$ is the most stable wave speed.
+If $c<2$ there is a traveling wave solution but without biological meaning since $u<0$. If $c>2$ there are traveling wave solutions. We see $c=2$ is the most stable wave speed.
 
 \begin{figure}[tbh]
 \begin{centering}
 \subfloat{\begin{centering}
-\includegraphics[width=5.4cm]{figures/solution_of_Fisher_equation_c=1}
+\includegraphics[width=5.4cm]{figures/solution_of_Fisher_equation_c_1.png}
 \par\end{centering} }
 \subfloat{\begin{centering}
-\includegraphics[width=5.4cm]{figures/solution_of_Fisher_equation_c=3.png}
+\includegraphics[width=5.4cm]{figures/solution_of_Fisher_equation_c_3.png}
 \par\end{centering} }
 \par\end{centering}
-\caption{\label{figure:PF}Phase plane of solutions of Fisher's equation with different values of c}
+\caption{\label{figure:PF}Phase plane of solutions of Fisher's equation with different values of c.}
 \end{figure}
+\end{enumerate}
 
-
-\section{Bistable(Cubic) Reaction Term}
-Remembering FHN:
-
-\bea
- \dt{v} &=& f(v)-w-w_0 \nonumber \\
-\dt{w} &=& \epsilon(v-\gamma w-v_0)\nonumber
-\ena
-\noindent where $f(v) = Av(v-\alpha)(1-v)$ ($0<\alpha<1$). If the recovery variable ($w$) is fixed and we allow things to diffuse, we get something of the form:
-
+\section{FitzHugh-Nagumo Model}
+The FitzHugh-Nagumo (FHN) model is 
+\begin{align*}
+ \dt{u} &= f(u)-w-w_0, \\
+\dt{w} &= \epsilon(u-\gamma w-u_0),
+\end{align*} where $f(u)$ is usually a cubic. This model exhibits fast-slow dynamics. Also, we can add in diffusive terms, producing the system 
+\begin{align*}
+ \dt{u} &= f(u)-w-w_0 + D_1 u_{xx}, \\
+\dt{w} &= \epsilon\left[u-\gamma w-u_0 + D_2 w_{xx}\right].
+\end{align*} With a simple rescaling ($w=w_0$, $D_1=1$), the parameter $\epsilon \ll 1,$ and $f(u)=-mu(u-1)(u-\alpha)$, we have
 \begin{equation}
 u_t=u_{xx}+mu(u - 1)(\alpha - u), \ \ \ 0<\alpha<1
-\end{equation}
-
-Bistable equation and as a dynamics it looks like Fitz-Hugh Nagumo with diffusion and it is also a version of Cable Equation.
-\newline
-\noindent Are there travelling wave solutions? To check we apply the
-change of variables.
-
-\begin{equation}
-u(x,t)=v(x+ct)=v(\xi) \nonumber
-\end{equation}
-
-\begin{equation}
-cv_\xi =v_{\xi\xi} + m v(v-1)(\alpha-v) \nonumber
-\end{equation}
-
-\noindent For $f(v)=m v(v-1)(\alpha-v)$
-
-\begin{center}
-$v_{\xi}=w$
-
-$w_{\xi}=cw-f(v)$\\
-\end{center}
-
-\noindent The steady states of f(v) are $v=0,1,$\,and\,$\alpha$. Now we are going to compute the Jacobian.
-
-
-\begin{center}
-$J(v,w)=
+\end{equation} This is also known as the bistable equation and the sable equation. For a reason (unknown to us now), we assume a traveling wave solution. Similar to the argument above, we transform to the wave coordinate with $u(x,t) = u(x+ct) = u(\xi)$, reduce the PDE to a system of ODEs, resulting in 
+\begin{equation*}
+\begin{cases}
+u_{\xi} & = w,\\
+w_{\xi} & = cw - um(u-1)(u-\alpha).
+\end{cases}
+\end{equation*} We note there are 3 equilibria at the $w=0$ branch: $u=0, u=1,$ and $u=\alpha$. Next, to classify the stability of these equilibria, we find the Jacobian matrix:
+\begin{equation*}
+J(u,w)=
 \begin{pmatrix}
   0 & 1 \\
-  -f^{'}(v) & c \\
-\end{pmatrix}$
-\par\end{center}
-
-Note that $-f^{'}(v)=-2mv\alpha+3mv^{2}+m\alpha-2mv$.
-\newline\indent The Jacobians are
-
-\begin{center}
-$J(0,0)=
+  -f^{'}(u) & c \\
+\end{pmatrix},
+\end{equation*} where $-f^{'}(u)=3mu^2 - 2mu(1+\alpha) + m\alpha$. The Jacobian matrices evaluated at the three equilibria points are:
+\begin{itemize}
+\item  For $(0,0)$, we have 
+\begin{equation*}
+J(0,0)=
 \begin{pmatrix}
   0 & 1 \\
   m\alpha & c \\
-\end{pmatrix}$
-\par\end{center}
+\end{pmatrix}, \hspace{.15in}\Rightarrow \hspace{.15in} \det(J(0,0))=-m\alpha < 0. \end{equation*} So, $(0,0)$ is a saddle.
 
-$det(J(0,0))=-m$ $\alpha < 0$ \ \ $ \Rightarrow$ \ \ (0,0) is a saddle.
-
-\begin{center}
-$J(1,0)=
+\item  For $(1,0)$, we have 
+\begin{equation*}
+J(1,0)=
 \begin{pmatrix}
-  0 & 1 \\
+   0 & 1 \\
   -m(\alpha-1) & c \\
-\end{pmatrix}$
-\par\end{center}
+\end{pmatrix}, \hspace{.15in}\Rightarrow \hspace{.15in} \det(J(1,0))< 0. \end{equation*} So, $(1,0)$ is a saddle.
 
-$det(J(1,0)) < 0$ \ \ $ \Rightarrow$ \ \ (1,0) is a saddle.
-
-
-\begin{center}
-$J(\alpha,0)=
+\item  For $(\alpha,0)$, we have 
+\begin{equation*}
+J(\alpha,0)=
 \begin{pmatrix}
-  0 & 1 \\
+   0 & 1 \\
   -m\alpha(1-\alpha) & c \\
-\end{pmatrix}$
-\par\end{center}
+\end{pmatrix}, \hspace{.15in}\Rightarrow \hspace{.15in} \det(J(\alpha,0))=m\alpha(\alpha-1) > 0 \end{equation*} So, $(\alpha,0)$ is a node or spiral, depending on the value of $\alpha$. Also, the stability depends on $c$; if $c>0$, $(\alpha, 0)$ is unstable.
+\end{itemize}
 
-$det(J(\alpha,0))=m\alpha(\alpha-1) > 0$ node or spiral depends on $\alpha$.
+What does $c$ look like though? With the equation $cu_\xi  = u_{\xi\xi} + mu(u-1)(\alpha - u),$ we take the $cu_\xi$ term to the RHS of the equation, multiply by $u_\xi$, and integrate with respect to $\xi$ over $(-\infty, \infty)$: 
+\begin{align*}
+0 &= \int_{-\infty}^{\infty} u_\xi\left[u_{\xi\xi}-cu_\xi+f(u)\right] d\xi \\
+&= 0 -c\int_{-\infty}^{\infty} u_\xi^2\,d\xi + \int_{0}^{1}f(s)\,ds.
+\end{align*}
+Solving for $c$ gives
+\begin{equation*}
+c = \frac{\int_{0}^{1}f(s)\,ds}{\int_{-\infty}^{\infty} u_\xi^2\,d\xi},
+\end{equation*} and we see the sign of $c$ depends on the integral in the numerator (since the denominator will always be non-negative).
 
-Stability depends on c. If c $>$ 0 it is unstable.
-
-
-To determine the sign of c
-
-\begin{equation}
-\int_{-\infty}^{\infty} v_\xi(v_{\xi\xi}-cv_\xi+f(v)=0)d\xi \nonumber
-\end{equation}
-
-\begin{equation}
-\int_{-\infty}^{\infty} \frac{d}{d\xi}(\frac{(v_\xi)^2}{2})d\xi-c\int_{-\infty}^{\infty}(v_\xi)^{2}d\xi+\int_{-\infty}^{\infty} f(v)v_\xi d\xi=0 \nonumber
-\end{equation}
-
-
-By a change of variables $s=u$
-
-
-\begin{equation}
-\int_{-\infty}^{\infty}\frac{d}{dz}(\frac{(u_\xi)^{2}}{2})d\xi-c\int_{-\infty}^{\infty}(u_\xi)^{2}d\xi+\int_{0}^{1}f(s)ds=0 \nonumber
-\end{equation}
-
-
-\indent Note: $\frac{(u_\xi)^{2}}{2}$ $\downharpoonright_{-\infty}^{\infty}=0$ if you move from FP to FP.
-
-
-\begin{equation}
-c=\unit{\frac{\int_{0}^{1}f(s)ds}{\int_{-\infty}^{\infty}(u_\xi)^{2}d\xi}} \nonumber
-\end{equation}
-
-
-Suppose $\int_0^1 f(s) ds > 0$ \ \ $ \Rightarrow$ c is positive.
-
-Look for $c\approx0$ is the trajectory goes from $(0,0)$ to $(1,0)$.
-
-\begin{equation}
-\int_{-\infty}^{\infty} u_\xi(u_\xi+f(u)=0)d\xi \nonumber
-\end{equation}
-\begin{equation}
-\int_{-\infty}^{\infty} \frac{d}{d\xi}(\frac{u_\xi^2}{2})d\xi+\int_0^1 f(s)ds \nonumber
-\end{equation}
-\begin{figure}
-\caption{Notes for bistable}
-\includegraphics[scale=.65]{figures/bistable.pdf}
-\label{fig_bist}
-\end{figure}
-
-Since the terms are all positive , there is no traveling wave when $c=0$.
-
-Summary: $u_t=u_{xx}+f(u)$
-
-{\bf 1)} If $f(u)=0$, no traveling waves.
-
-{\bf 2)} If  $f(u)=u(1-u)$, traveling waves with numerous speeds.
-
-{\bf 3)} If $f(u)=$ cubic, one traveling wave for specific c.
-
-{\bf 4)} If $f(u)=$ higher order, a practical example of growth function for spruce budworm problem.
+For $cu^{'}=u^{''}+f(u)$, we have the following take-aways:
+\begin{enumerate}
+\item If $f(u)=0$, then there is no traveling wave. That is, $c=0$ and out system if the diffusion equation.
+\item If $f(u)=u(1-u),$ the system is Fisher's equation and we get an infinite number of traveling waves. 
+\item If $f(u)$ is cubic, the system is the bistable (or cable) equation and we get one traveling wave.
+\item If $f(u)$ is greater than cubic, then all bets are off and good luck.
+\end{enumerate}
 
 
 \subsection{Spruce-Budworm Problem}
-This is an ODE model as
-
+The Spruce-Budworm problem is defined as
 \begin{equation}
-\frac{du}{dt}=f(u)
+\frac{du}{dt}=f(u),
 \end{equation}
-with
-\begin{equation}
-f(u)=ru(1-u)-\frac{u^2}{1+u^2}
-\end{equation}
-
-Analyze this here!
-SS:
-
+with $f(u)=ru(1-u)-\frac{u^2}{1+u^2}$. The $ru(1-u)$ term describes logistic growth whereas the $\frac{u^2}{1+u^2}$ term is a penalty term, or competition term. We can plot each term individually and look at the intersection of the profiles to find $\frac{du}{dt}=0$ equilibria. 
 Solve 
 \bea
 0 &=& f(u) \nonumber \\
