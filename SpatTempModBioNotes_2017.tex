@@ -586,34 +586,36 @@ C\int_{-\infty}^{\infty}(U^{'})^{2}dz\nonumber=-\int_{U_{3}}^{U_{1}}f(S)ds
 
 The sign of $C = -sign (\int _{U_3}^{U_1}f (S )ds )$
 
+%%Cell Cluster Growth
 \subsection{Growth of Cell Cluster}
-Some biologist sometimes need to grow tissue (or biofilm) they dropped pieces of bacteria in a beaker. Below are some assumptions about the processes.
+Some biologist sometimes need to grow tissue (or biofilm) where they drop pieces of bacteria in a beaker. They do this becuse they want to know how many bateria are in each cluster as time goes one. How can we find out the total amount of bacteria as a function of time. Below are some assumptions about the processes.
 
 \begin{itemize}
 	\item All clusters of bacteria are spheres.
 	\item All clusters have the same initial size.
-	\item Growth (rate of change of volume) of the clusters is related to surface area.
+	\item Growth (rate of change of volume) of the clusters \propto surface area.
+	\item Bacterial density is constant.
 \end{itemize}
 \begin{center}
-$\dfrac{dv}{dt}=ks$
+$\dfrac{dv}{dt}=ks,$
 \end{center}
 \begin{center}
-$V=\frac{4}{3}\pi r^{3}$
+$V=\frac{4}{3}\pi r^{3},$
 \end{center}
 \begin{center}
-$S=4\pi r^{2}$
+$S=4\pi r^{2}.$
 \end{center}
 
-Where $v$ is the volume, $s$ is the surface area, and $r$ is the radius of each cluster. Taking the derivative of $v$ with respect to $r$ we get:
+Where $V$ is the volume, $S$ is the surface area, and $r$ is the radius of each cluster. Taking the derivative of $V$ with respect to $r$ we get:
 \begin{center}
-$\dfrac{dv}{dt}=4\pi r^{2}\frac{dr}{dt}=k4\pi r^{2}$ 
+$\dfrac{dv}{dt}=4\pi r^{2}\frac{dr}{dt}=k4\pi r^{2},$ 
 \end{center}
 dividing both sides by $4\pi r^{2}$ yields:
 \begin{center}
-$\dfrac{dr}{dt}= k$
+$\dfrac{dr}{dt}= k=constant,$
 \end{center}
 \begin{center}
-$V_{0}= v_{0}*N $
+$V_{0}= v_{0}*N. $
 \end{center}
 
 
@@ -630,77 +632,83 @@ Thus the total volume is given by:
 $V = N\frac{4}{3}\pi(kt+r_{0})$ 
 \end{center}
 
-\begin{itemize}
-\item Now we will assume the clusters no longer have the same initial size.
-\end{itemize}
+Now we will assume the clusters no longer have the same initial size.
+
 
 The spheres have initial distribution $\alpha(r)$. Assume each sphere grows like:
 \begin{center}
  $\dfrac{dr}{dt}=k$.
  \end{center}
 
-Let $p(r,t)$ be the number of sphere of radius $r$ at time $t$. The following integral determines the proportion of clusters with radius between $[r,r + \Delta r]$ at time $t$.
+Let $p(r,t)$ be the number of spheres of radius $r$ at time $t$. Note that here, $r$ is not a spatial measure! The following integral determines the proportion of clusters with radius between $[r,r + \Delta r]$ at time $t$.
 \begin{center}
-$\int_{r}^{r+\Delta}p (r,t )dr$
+$\int_{r}^{r+\Delta r}p(r,t )dr$
 \end{center}
 
 
 
 
-We set Boundary conditions of $P(\infty, t )=0$ and $P (0,t )=0$. We use the following equation to determine $p$.
+We set Boundary conditions of $P(\infty, t )=0$ and $P (0,t )=0$. We use the following equation to determine $p$,
 
 \begin{center}
-$p_{t} = -kp_{r}$
+$p_{t} = -kp_{r}.$
 \end{center} 
 
-We will not motivate this rigorously, or even at all. Just think as about and try to convince yourself it makes sense. This is a common PDE that we know has traveling wave solutions. We look for these solutions by doing the following:
+We will not motivate this rigorously, but just say that $r$ grows linearly with time so $r(t)=kt+r_0$ makes sense. Now we assumer there is a distribution with this same behavior. This is a common PDE that we know has traveling wave solutions. We look for these solutions by doing the following:
 
 \begin{center}
-$P (r,0 )=\alpha (r )$, $P (0,t )= 0$
+$P (r,0 )=\alpha (r )$, $P (0,t )= 0,$
 \end{center}
 \begin{center}
-$Z = r - ct$  (traveling wave)
+$Z = r - ct$  (insert our traveling wave coordinates),
 \end{center}
 \begin{center}
-$P (r,t )= P (r-ct )$
+$P (r,t )= P (r-ct ),$
 \end{center}
 \begin{center}
-$-cP_{z}=-kP_{z}$
+$-cP_{z}=-kP_{z}.$
 \end{center}
 
 For this ODE the have a solution, $c=k$. So we know that the total volume is given by the following integral:
 
 \begin{center}
-$V(t) = \frac{4}{3}\pi \int_{0}^{\infty} r^{3}p(r-kt)dr $
+$V(t) = \frac{4}{3}\pi \int_{0}^{\infty} r^{3}p(r-kt)dr.$
 \end{center}
 By substituting $u= r-kt$ we get:
 
 \begin{center}
-$V(t) = \frac{4}{3}\pi \int_{0}^{\infty}(u+kt)^{3}p(u)du $
+\begin{aligned}
+$V(t) =& \frac{4}{3}\pi \int_{0}^{\infty}(u+kt)^{3}p(u)du$\\
+ $=& \frac{4}{3}\pi \int_{0}^{\infty}(u+kt)^{3}p(u)du $ \\
+$ =& [V_{0} + ktS_{0}+4\pi(kt)^{2}R_{0}+4/3(kt)^{3}] N_{0},$\\
+$N(t) =& \int_{0}^{\infty}p(r,t)dr.$
+\end{aligned}
 \end{center}
 
-\begin{center}
- $= \frac{4}{3}\pi \int_{0}^{\infty}(u+kt)^{3}p(u)du $
-\end{center}
+\noindent {\bf First Moment-Radius:}
+$R = \frac{1}{N (t )}\int _{0}^{\infty} rP (r,t )dr$\\
+\begin{itemize}
+\item Also known as Average Radius or the Variance in statistical terms
+\end{itemize}
 
-\begin{center}
-$ = [V_{0} + ktS_{0}+4\pi(kt)^{2}R_{0}+4/3(kt)^{3}] N_{0}$
-\end{center}
-
-\begin{center}
-$N(t) = \int_{0}^{\infty}p(r,t)dr$
-\end{center}
-
-\noindent First Moment-Radius:
-$R = \frac{1}{N (t )}\int _{0}^{\infty} rP (r,t )dr$
-
-\noindent Second Moment-Surface Area:
+\noindent {\bf Second Moment-Surface Area:}
 $S (t )=\frac{4\pi}{N}\int _{0}^{\infty} r^{2}P (r,t )dr$
-
-\noindent Third Moment-Volume:
+\begin{itemize}
+\item Also known as Average Surface Area or the Skewness in statistical terms
+\end{itemize}
+\noindent {\bf Third Moment-Volume:}
 $V = \frac{4\pi}{3}\frac{1}{N}\int _{0}^{\infty} r^{3}P (r,t )dr$
+\begin{itemize}
+\item Also known as Average Volume or the Kurtosis in statistical terms
+\end{itemize}
+
 
 \subsection{Chemotaxis}
+\begin{itemize}
+\item Check out the Howard Berg (Harvard) Chemotaxis Online Lectures
+\item \textit{E. coli} start movement by running, then when the bacterium dislikes the direction it is moving in, it will tumble and randomly decide to move forward in another direction. The bacterium will then either run forward or tumble again based on the chemical levels around it. This behavior has no bias so we can model this with the diffusion equation.
+\item Next, if we put in a nutrient, what would happen? Originally people thought \textit{E. coli} had a sensor in its front and back side, but they actually have something that stores chemical concentrations such that as they move they take chemical samples to see if they are happy with the chemical levels or not.
+\end{itemize}
 Here we have 2 constituents:
 \begin{itemize}
 	\item Bacteria, which consume nutrient and grow. Bacteria have random and directed motion which is signal/nutrient dependant.
@@ -709,19 +717,19 @@ Here we have 2 constituents:
 
 Here we denote $b(x,t)$ as bacteria and $s(x,t)$ as signal.
 \begin{center}
-$\dfrac{\partial b}{\partial t} + (J)_{x}=f(s,b)$
+$\dfrac{\partial b}{\partial t} + (J)_{x}=f(s,b),$
 \end{center}
 \begin{center}
-$J=J_{diffusion}+J_{chemotaxis}$
+$J=J_{diffusion}+J_{chemotaxis}=Db_x-(b\chi(s)s_x),$
 \end{center}
 \begin{center}
-$\dfrac{\partial b}{\partial t}=f(s,b)+(Db_{x})_{x}-(b\chi(s)s_{x})_{x}$
+$\dfrac{\partial b}{\partial t}=f(s,b)+\dfrac{\partial }{\partial x}[(Db_{x})-(b\chi(s)s_{x})].$
 \end{center}
 
-We will consider $D$ as a constant so $(Db_{x})_{x}=Db_{xx}$. $\chi(x)$ is how sensitive the bacteria is to the signal. Intuitively, the more nutrient available the less sensitive the bacteria should be to it. Possible expressions are $\chi(x) = \dfrac{\chi_{0}}{s}$ or $\chi(x)=\dfrac{\chi_{0}k}{(k+s)^{2}}$.
+We will consider $D$ as a constant so $(Db_{x})_{x}=Db_{xx}$. $\chi(x)$ is how sensitive the bacteria is to the chemical signal. Intuitively, the more nutrient available the less sensitive the bacteria should be to it. Possible expressions are $\chi(x) = \dfrac{\chi_{0}}{s}$ or $\chi(x)=\dfrac{\chi_{0}k}{(k+s)^{2}}$. The first expression has a problem when $s\rightarrow0$ so the second expression just allows for $s \rightarrow 0$. Next we have:
 
 \begin{center}
-$\dfrac{\partial s}{\partial t}=-g(s,b) + (D_{s}s_{x})_{x}$
+$\dfrac{\partial s}{\partial t}=-g(s,b) + \dfrac{\partial }{\partial x}(D_{s}s_{x}).$
 \end{center}
 
 We make two assumptions
@@ -733,43 +741,45 @@ We make two assumptions
 This yields the following equations:
 
 \begin{center}
-$\dfrac{\partial b}{\partial t}=\dfrac{\partial}{\partial x}(Db_{x}-b\chi(s)s_{x})$
-\end{center}
-
-\begin{center}
-$\dfrac{\partial s}{\partial t}=-k(s)b$
+$\dfrac{\partial b}{\partial t}=\dfrac{\partial}{\partial x}(Db_{x}-b\chi(s)s_{x}),$\\
+$\dfrac{\partial s}{\partial t}=-k(s)b.$
 \end{center}
 
 \noindent Initial conditions are given by $b(x,0)=b_{0}$ and $s(x,0) = s_{0}$. We consider  $0<x<L$ with boundary conditions $\dfrac{\partial b}{\partial x} = \dfrac{\partial s}{\partial x} = 0$ at $x=0,L$. Now we look for traveling wave solutions. 
 
 \begin{center}
-$z=x-ct$
-\end{center}
-
+\begin{aligned}
+$z=&x-ct,$
+\end{aligned}
 \bea
-cb'&=&-Db''+b(\chi(s)s')'\nonumber \\
-&=&-Db''+(\delta \frac{b}{s} s')' \nonumber
+cb'&=&-Db''+\dfrac{\partial}{\partial z}(b\chi(s)s')\nonumber \\
+&=&-Db''+\dfrac{\partial}{\partial z}(\frac{\chi_0 b}{s} s') \nonumber
 \ena
-\begin{center}
-$cs'=k(s)b$
+\begin{aligned}
+$cs'=&k(s)b$
+\end{aligned}
 \end{center}
 We have BC that imply that $b\rightarrow 0$, $b'\rightarrow 0$, $s\rightarrow s_{\infty}$ as $z\rightarrow\infty$
 Which is equivalent to assuming far in front of the wave front there are no bacteria and s is the initial value.
  Integrate first equation
 \bea
-cb=-Db'+\dfrac{bx_{0}s'}{s}+Q 
+cb=-Db'+\dfrac{bx_{0}s'}{s}+Q, 
 \ena
 
-$Q$ is zero from boundary conditions.
+but $Q$ is zero from boundary conditions. So we may solve for $\dfrac{b'}{b}$ and we'll get:
 \bea
-b'&=&-\frac{c}{D}b+\dfrac{b\chi_{0}s'}{D_{s}} \nonumber \\
-\frac{b'}{b} &=&-\frac{c}{D}+\dfrac{\chi_{0}s'}{D_{s}} \nonumber
+b'&=&-\frac{c}{D}b+\dfrac{b\chi_{0}s'}{D_{s}}, \nonumber \\
+\frac{b'}{b} &=&-\frac{c}{D}+\dfrac{\chi_{0}s'}{D_{s}}.
 \ena
 Integrate and find that $b=\hat Q S^{\delta/D}e^{-z}$
 Substitute into previous equation, integrate:
 
-$$s=(Qkc^{-2}(\delta-D)e^{-cz/D}+s_0^{1-\delta/D})^{-\frac{1}{\delta/D-1}}$$ 
-This system of ODEs has a closed form solution given by:
+$$s=(Qkc^{-2}(\delta-D)e^{-cz/D}+s_0^{1-\delta/D})^{-\frac{1}{\delta/D-1}}.$$
+\begin{itemize}
+\item We can now analyze these new equations in the s, b phase plane. If there exists a solution such that Equation () has a solution, there is a traveling wave! That is what gives us the information we want about this problem.
+\item When people say Keller-Segel they mean to insert $-b\chi(s)s_{x}$ in the flux term
+\item When you want to model chemotaxic behavior and don't want to mess with the gory details, just insert Keller-Segel and see what happens.
+\end{itemize}
 
 %\begin{center}
 %$b(z)=\dfrac{c^{2}s_{0}}{k(\chi_{0}-D)}(\dfrac{s}{s_{0}})^{\frac{\chi_{0}}{D}}e^{-\frac{cz}{D}}$
