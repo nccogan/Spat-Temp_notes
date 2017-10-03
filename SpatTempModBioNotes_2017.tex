@@ -593,7 +593,7 @@ Some biologist sometimes need to grow tissue (or biofilm) where they drop pieces
 \begin{itemize}
 	\item All clusters of bacteria are spheres.
 	\item All clusters have the same initial size.
-	\item Growth (rate of change of volume) of the clusters \propto surface area.
+	\item Growth (rate of change of volume) of the clusters $\propto$ surface area.
 	\item Bacterial density is constant.
 \end{itemize}
 \begin{center}
@@ -677,12 +677,12 @@ $V(t) = \frac{4}{3}\pi \int_{0}^{\infty} r^{3}p(r-kt)dr.$
 By substituting $u= r-kt$ we get:
 
 \begin{center}
-\begin{aligned}
-$V(t) =& \frac{4}{3}\pi \int_{0}^{\infty}(u+kt)^{3}p(u)du$\\
- $=& \frac{4}{3}\pi \int_{0}^{\infty}(u+kt)^{3}p(u)du $ \\
-$ =& [V_{0} + ktS_{0}+4\pi(kt)^{2}R_{0}+4/3(kt)^{3}] N_{0},$\\
-$N(t) =& \int_{0}^{\infty}p(r,t)dr.$
-\end{aligned}
+\bea
+V(t)& =& \frac{4}{3}\pi \int_{0}^{\infty}(u+kt)^{3}p(u)du\\
+ &=& \frac{4}{3}\pi \int_{0}^{\infty}(u+kt)^{3}p(u)du  \\
+ &=& [V_{0} + ktS_{0}+4\pi(kt)^{2}R_{0}+4/3(kt)^{3}] N_{0},\\
+N(t) &=& \int_{0}^{\infty}p(r,t)dr.
+\ena
 \end{center}
 
 \noindent {\bf First Moment-Radius:}
@@ -748,16 +748,17 @@ $\dfrac{\partial s}{\partial t}=-k(s)b.$
 \noindent Initial conditions are given by $b(x,0)=b_{0}$ and $s(x,0) = s_{0}$. We consider  $0<x<L$ with boundary conditions $\dfrac{\partial b}{\partial x} = \dfrac{\partial s}{\partial x} = 0$ at $x=0,L$. Now we look for traveling wave solutions. 
 
 \begin{center}
-\begin{aligned}
-$z=&x-ct,$
-\end{aligned}
+\bea
+z=&x-ct,
+\ena
 \bea
 cb'&=&-Db''+\dfrac{\partial}{\partial z}(b\chi(s)s')\nonumber \\
 &=&-Db''+\dfrac{\partial}{\partial z}(\frac{\chi_0 b}{s} s') \nonumber
 \ena
-\begin{aligned}
-$cs'=&k(s)b$
-\end{aligned}
+
+\bea
+cs'&=&k(s)b
+\ena
 \end{center}
 We have BC that imply that $b\rightarrow 0$, $b'\rightarrow 0$, $s\rightarrow s_{\infty}$ as $z\rightarrow\infty$
 Which is equivalent to assuming far in front of the wave front there are no bacteria and s is the initial value.
